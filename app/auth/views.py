@@ -1,7 +1,7 @@
 from flask import flash, redirect, render_template, url_for
 from flask_login import login_required, login_user, logout_user
 from . import auth
-from forms import LoginForm, RegistrationForm
+from .forms import LoginForm, RegistrationForm
 from .. import db
 from ..models import Employee
 
@@ -30,7 +30,7 @@ def login():
     else:
       flash('Invalid email or password')
 
-  return render_template('auth/login.hrml', form=form, title='Login')
+  return render_template('auth/login.html', form=form, title='Login')
 
 
 @auth.route('/logout')
